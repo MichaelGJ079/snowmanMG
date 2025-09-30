@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Muñeco de Nieve en A-Frame</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene background="color: #B0E0E6"> <!-- Fondo azul más suave (PowderBlue) -->
+        <a-entity position="0 1.5 5" camera look-controls wasd-controls></a-entity>
+        
+        <a-entity id="snowman" position="0 0.5 0">
+            
+            <!-- Cuerpo (ligeramente azulado para variar del blanco puro) -->
+            <a-sphere position="0 0 0" radius="0.5" color="#F8F8FF" material="shader: standard; roughness: 0.3; metalness: 0.1"></a-sphere>
+            <a-sphere position="0 0.85 0" radius="0.35" color="#F8F8FF" material="shader: standard; roughness: 0.3; metalness: 0.1"></a-sphere>
+            <a-sphere position="0 1.45 0" radius="0.25" color="#F8F8FF" material="shader: standard; roughness: 0.3; metalness: 0.1"></a-sphere>
+            
+            <!-- Ojos -->
+            <a-sphere position="-0.08 1.50 0.22" radius="0.03" color="#1C1C1C"></a-sphere>
+            <a-sphere position="0.08 1.50 0.22" radius="0.03" color="#1C1C1C"></a-sphere>
+            
+            <!-- Nariz (zanahoria más rojiza) -->
+            <a-cone position="0 1.45 0.25" radius-bottom="0.02" radius-top="0.005" height="0.1" color="#FF6347" rotation="-90 0 0"></a-cone>
+            
+            <!-- Boca (gris oscuro en vez de negro absoluto) -->
+            <a-sphere position="-0.06 1.40 0.22" radius="0.015" color="#2F4F4F"></a-sphere>
+            <a-sphere position="0 1.38 0.22" radius="0.015" color="#2F4F4F"></a-sphere>
+            <a-sphere position="0.06 1.40 0.22" radius="0.015" color="#2F4F4F"></a-sphere>
+            
+            <!-- Brazos (color madera más claro) -->
+            <a-box position="-0.35 0.85 0" width="0.3" height="0.05" depth="0.05" color="#A0522D" rotation="0 0 -30"></a-box>
+            <a-box position="0.35 0.85 0" width="0.3" height="0.05" depth="0.05" color="#A0522D" rotation="0 0 30"></a-box>
+            
+            <!-- Botones (azules en lugar de negros) -->
+            <a-sphere position="0 0.70 0.35" radius="0.03" color="#1E90FF"></a-sphere>
+            <a-sphere position="0 0.85 0.35" radius="0.03" color="#1E90FF"></a-sphere>
+            <a-sphere position="0 1.00 0.35" radius="0.03" color="#1E90FF"></a-sphere>
+            
+            <!-- Sombrero (ahora marrón oscuro) -->
+            <a-cylinder position="0 1.67 0" radius="0.2" height="0.05" color="#3B2F2F"></a-cylinder>
+            <a-cylinder position="0 1.75 0" radius="0.15" height="0.15" color="#5C4033"></a-cylinder>
+            
+            <!-- Bufanda (verde en vez de roja) -->
+            <a-torus position="0 1.22 0" color="#228B22" radius="0.25" radius-tubular="0.04" rotation="90 0 0" arc="360"></a-torus>
+            
+        </a-entity>
+        
+        <!-- Suelo (blanco nieve más brillante) -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#FFFFFF" material="shader: standard; roughness: 0.8"></a-plane>
+        
+        <!-- Luces -->
+        <a-light type="ambient" color="#777"></a-light>
+        <a-light type="directional" position="2 5 3" intensity="0.9"></a-light>
+        
+        <!-- Nieve -->
+        <a-entity id="snowflakes" particle-system="preset: snow; color: #F8F8FF; particleCount: 2000"></a-entity>
+        
+        <!-- Árboles (verde más brillante) -->
+        <a-entity position="-3 0 -3">
+            <a-cone position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1.5" color="#228B22"></a-cone>
+            <a-cone position="0 1.2 0" radius-bottom="0.4" radius-top="0" height="1.2" color="#228B22"></a-cone>
+            <a-cone position="0 1.8 0" radius-bottom="0.3" radius-top="0" height="1" color="#228B22"></a-cone>
+            <a-cylinder position="0 -0.4 0" radius="0.08" height="0.3" color="#8B5A2B"></a-cylinder>
+        </a-entity>
+        
+        <a-entity position="3 0 2">
+            <a-cone position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1.5" color="#228B22"></a-cone>
+            <a-cone position="0 1.2 0" radius-bottom="0.4" radius-top="0" height="1.2" color="#228B22"></a-cone>
+            <a-cone position="0 1.8 0" radius-bottom="0.3" radius-top="0" height="1" color="#228B22"></a-cone>
+            <a-cylinder position="0 -0.4 0" radius="0.08" height="0.3" color="#8B5A2B"></a-cylinder>
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>
